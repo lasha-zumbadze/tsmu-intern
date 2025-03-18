@@ -17,13 +17,15 @@ function ErrorPage() {
               OOPS! Page Not Found!
             </h1>
 
-            <Link
-              onClick={() => console.clear()}
-              className="bg-blue-500 hover:bg-blue-600 transition-all text-white text-2xl px-12 py-3 rounded-lg inset-shadow-indigo-600 shadow-2xl drop-shadow-lg divide-rose-950 w-fit"
-              to="/"
-            >
-              Back Home
-            </Link>
+            <button>
+              <Link
+                onClick={() => console.clear()}
+                className="bg-blue-500 hover:bg-blue-600 transition-all text-white text-2xl px-12 py-3 rounded-lg inset-shadow-indigo-600 shadow-2xl drop-shadow-lg divide-rose-950 w-fit"
+                to="/"
+              >
+                Back Home
+              </Link>
+            </button>
           </div>
         </div>
       </div>

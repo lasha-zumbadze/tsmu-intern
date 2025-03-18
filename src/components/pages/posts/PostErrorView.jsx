@@ -16,13 +16,15 @@ function PostErrorView({ error, additionLabel, redirectUrl, redirectLabel }) {
               <h2 className="text-3xl text-[#3E3E3E]">OOPS! {error}</h2>
               <p className="text-lg text-[#3E3E3E]">{additionLabel}</p>
             </div>
-            <Link
-              onClick={() => console.clear()}
-              className="bg-blue-500 hover:bg-blue-600 transition-all text-white text-2xl px-12 py-3 rounded-lg inset-shadow-indigo-600 shadow-2xl drop-shadow-lg divide-rose-950 w-fit"
-              to={redirectUrl}
-            >
-              {redirectLabel}
-            </Link>
+            <button>
+              <Link
+                onClick={() => console.clear()}
+                className="bg-blue-500 hover:bg-blue-600 transition-all text-white text-2xl px-12 py-3 rounded-lg inset-shadow-indigo-600 shadow-2xl drop-shadow-lg divide-rose-950 w-fit"
+                to={redirectUrl}
+              >
+                {redirectLabel}
+              </Link>
+            </button>
           </div>
         </div>
       </div>
