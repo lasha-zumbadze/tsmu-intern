@@ -1,8 +1,6 @@
 import Logo from "../ui/Logo";
 import SearchBar from "../ui/SearchBar";
-import { HiMiniShoppingCart } from "react-icons/hi2";
 import { FaSun } from "react-icons/fa";
-import { IoNotificationsSharp } from "react-icons/io5";
 
 function Header() {
   return (
@@ -16,12 +14,9 @@ function Header() {
           <span className="cursor-pointer hover:translate-y-0.5 transition-all">
             <FaSun />
           </span>
-          <span className="cursor-pointer hover:translate-y-0.5 transition-all">
-            <HiMiniShoppingCart />
-          </span>
-          <span className="cursor-pointer hover:translate-y-0.5 transition-all">
-            <IoNotificationsSharp />
-          </span>
+          <button className="bg-gray-500 text-white text-lg w-7 h-7 rounded-md cursor-pointer hover:-translate-y-0.5 transition-all">
+            EN
+          </button>
         </div>
       </div>
     </header>
