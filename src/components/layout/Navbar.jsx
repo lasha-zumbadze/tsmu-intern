@@ -1,12 +1,12 @@
-import Accordion from "../ui/Accordion";
+// import Accordion from "../ui/Accordion";
 import PageNavbar from "../navbar/PageNavbar";
-import ModuleNavbar from "../navbar/ModuleNavbar";
-import { SiProgress } from "react-icons/si";
+// import ModuleNavbar from "../navbar/ModuleNavbar";
+// import { SiProgress } from "react-icons/si";
 
 function Navbar() {
   return (
     <nav className="overflow-y-auto overscroll-x-none py-5 flex flex-col gap-5 h-full">
-      <Accordion
+      {/* <Accordion
         title="Dashboard"
         routeData={[
           "Analytics",
@@ -19,10 +19,10 @@ function Navbar() {
         ]}
       >
         <SiProgress />
-      </Accordion>
+      </Accordion> */}
 
       <PageNavbar />
-      <ModuleNavbar />
+      {/* <ModuleNavbar /> */}
     </nav>
   );
 }
