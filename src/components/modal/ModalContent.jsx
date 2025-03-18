@@ -3,12 +3,14 @@ import { useModalContext } from "../../context/ModalContext";
 import toast from "react-hot-toast";
 import { queryAction } from "../../utils/helpers";
 import ModalForm from "./ModalForm";
+import { useTranslation } from "react-i18next";
 
 const CANCEL_BTN =
   "rounded-md border border-gray-500 text-gray-600 text-lg w-28 md:w-36 hover:text-white hover:bg-red-400 cursor-pointer transition-all";
 
 function ModalContent({ submitBtnStyle }) {
   const { id: postId } = useParams();
+  const { t } = useTranslation();
 
   const {
     setIsOpenAdd,
@@ -45,7 +47,7 @@ function ModalContent({ submitBtnStyle }) {
         {actionType !== "delete" && <ModalForm />}
         <div className="flex gap-10">
           <button className={CANCEL_BTN} onClick={handleCloseModal}>
-            Cancel
+            {t("modal.btnCancel")}
           </button>
           <button
             form="modalForm"

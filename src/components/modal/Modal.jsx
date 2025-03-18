@@ -1,6 +1,7 @@
 import { useModalContext } from "../../context/ModalContext";
 import { useEffect } from "react";
 import ModalContent from "./ModalContent";
+import { useTranslation } from "react-i18next";
 
 const MAIN_BTN =
   "rounded-md border border-gray-500 bg-blue-400 text-lg w-28 md:w-36 py-3 text-white transition-all";
@@ -9,6 +10,8 @@ const SECONDARY_BTN =
   "border border-gray-300 w-20 md:w-28 py-1.5 text-blue-500 bg-white rounded-md text-lg cursor-pointer transition-all hover:-translate-y-0.5 hover:shadow-md";
 
 function Modal({ modalType }) {
+  const { t } = useTranslation();
+
   const {
     setBtnLabel,
     setModalTitle,
@@ -58,37 +61,37 @@ function Modal({ modalType }) {
         <button
           onClick={() => {
             setActionType("add");
-            setBtnLabel("Create Post");
-            setModalTitle("Create New Post");
+            setBtnLabel(`${t("modal.modalCreate.btnCreate")}`);
+            setModalTitle(`${t("modal.modalCreate.modalTitle")}`);
             setIsOpenAdd(true);
           }}
           className={`${MAIN_BTN} cursor-pointer hover:bg-blue-600`}
         >
-          Create Post
+          {t("modal.btnCreate")}
         </button>
       ) : (
         <div className="flex justify-between m-10 items-center">
           <button
             onClick={() => {
               setActionType("delete");
-              setBtnLabel("Delete");
-              setModalTitle("Are you sure you want to delete the post?");
+              setBtnLabel(`${t("modal.modalDelete.btnDelete")}`);
+              setModalTitle(`${t("modal.modalDelete.modalTitle")}`);
               setIsOpenDelete(true);
             }}
             className={`${SECONDARY_BTN} shadow-red-300`}
           >
-            Delete
+            {t("modal.btnDelete")}
           </button>
           <button
             onClick={() => {
               setActionType("edit");
-              setBtnLabel("Save");
-              setModalTitle("Update Post");
+              setBtnLabel(`${t("modal.modalUpdate.btnUpdate")}`);
+              setModalTitle(`${t("modal.modalUpdate.modalTitle")}`);
               setIsOpenEdit(true);
             }}
             className={`${SECONDARY_BTN} shadow-blue-400`}
           >
-            Update
+            {t("modal.btnUpdate")}
           </button>
         </div>
       )}

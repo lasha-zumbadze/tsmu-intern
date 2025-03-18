@@ -1,0 +1,89 @@
+{
+  "view": {
+    "home": {
+      "tabTitle": "მთავარი გვერდი",
+      "pageTitle": "მთავარი გვერდი"
+    },
+    "posts": {
+      "tabTitle": "პოსტები",
+      "pageTitle": "ყველა პოსტი",
+      "postItem": {
+        "btnLabel": "კითხვის გაგრძელება"
+      }
+    },
+    "faculty": {
+      "tabTitle": "ფაკულტეტები",
+      "pageTitle": "ფაკულტეტები",
+
+      "facultyModal": {
+        "btnCreate": "დამატება",
+        "btnDelete": "წაშლა",
+        "btnUpdate": "განახლება",
+        "btnCancel": "გაუქმება",
+
+        "modalCreate": {
+          "modalTitle": "ფაკულტეტის დამატება",
+          "btnCreate": "დამატება"
+        },
+        "modalUpdate": {
+          "modalTitle": "ფაკულტეტის განახლება",
+          "btnUpdate": "დამახსოვრება"
+        },
+        "modalDelete": {
+          "modalTitle": "ნამდვილად გსურთ ფაკულტეტის წაშლა?",
+          "btnDelete": "წაშლა"
+        }
+      }
+    },
+    "post": {
+      "tabTitle": "პოსტი"
+    },
+    "pageNotFound": {
+      "tabTitle": "გვერდი ვერ მოიძებნა",
+      "pageTitle": "უუფს! გვერდი ვერ მოიძებნა",
+      "btnLabel": "მთავარი გვერდი"
+    },
+    "postNotFound": {
+      "tabTitle": "პოსტი არ იძებნება"
+    }
+  },
+  "ui": {
+    "pagination": {
+      "pageIndex": "გვერდი",
+      "totalPageLabel": "სულ",
+      "btnPrev": "წინა",
+      "btnNext": "მომდევნო",
+      "lastPage": "ბოლო გვერდი"
+    }
+  },
+  "modal": {
+    "btnCreate": "პოსტის დამატება",
+    "btnUpdate": "განახლება",
+    "btnDelete": "წაშლა",
+    "btnCancel": "გაუქმება",
+    "modalCreate": {
+      "modalTitle": "პოსტის დამატება",
+      "btnCreate": "დამატება"
+    },
+    "modalUpdate": {
+      "modalTitle": "პოსტის განახლება",
+      "btnUpdate": "დამახსოვრება"
+    },
+    "modalDelete": {
+      "modalTitle": "ნამდვილად გსურთ პოსტის წაშლა?",
+      "btnDelete": "წაშლა"
+    },
+    "modalForm": {
+      "formTitle": "სათაური",
+      "formBody": "პოსტი"
+    }
+  },
+  "navigation": {
+    "pages": {
+      "title": "გვერდები",
+      "home": "მთავარი",
+      "faculty": "ფაკულტეტები",
+      "posts": "პოსტები"
+    }
+  }
+}

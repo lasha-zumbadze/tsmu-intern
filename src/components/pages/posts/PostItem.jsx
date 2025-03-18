@@ -2,10 +2,12 @@ import { IoIosArrowForward } from "react-icons/io";
 import Card from "react-bootstrap/Card";
 import { getRandomDate } from "../../../utils/helpers";
 import { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function PostItem({ title, body }) {
   const [hovered, setHovered] = useState(false);
   const randomDate = useMemo(() => getRandomDate(), []);
+  const { t } = useTranslation();
 
   return (
     <Card
@@ -25,7 +27,7 @@ function PostItem({ title, body }) {
           {body}
         </Card.Text>
         <div className="flex items-center text-blue-500">
-          <span className="border-b ">Continue reading</span>
+          <span className="border-b ">{t("view.posts.postItem.btnLabel")}</span>
           <span
             className={`text-lg transition-all ${hovered && "translate-x-1"}`}
           >

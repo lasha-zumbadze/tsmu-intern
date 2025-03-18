@@ -1,11 +1,13 @@
 import { useState } from "react";
 import EditModal from "./EditModal";
 import DeleteModal from "./DeleteModal";
+import { useTranslation } from "react-i18next";
 
 function FacultyItem({ faculty, index, dispatch }) {
   const [facultyName, setFacultyName] = useState(faculty);
   const [editOpen, setEditOpen] = useState(false);
   const [deleteOpen, setDeleteOpen] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -34,13 +36,13 @@ function FacultyItem({ faculty, index, dispatch }) {
             className="text-gray-500 cursor-pointer border-b hover:text-gray-700 transition-all"
             onClick={() => setDeleteOpen(true)}
           >
-            Delete
+            {t("view.faculty.facultyModal.btnDelete")}
           </button>
           <button
             className="text-gray-500 cursor-pointer border-b hover:text-gray-700 transition-all"
             onClick={() => setEditOpen(true)}
           >
-            Edit
+            {t("view.faculty.facultyModal.btnUpdate")}
           </button>
         </div>
       </div>

@@ -1,0 +1,89 @@
+{
+  "view": {
+    "home": {
+      "tabTitle": "Home Page",
+      "pageTitle": "Home Page"
+    },
+    "posts": {
+      "tabTitle": "Posts",
+      "pageTitle": "All Posts",
+      "postItem": {
+        "btnLabel": "Continue reading"
+      }
+    },
+    "faculty": {
+      "tabTitle": "Faculties",
+      "pageTitle": "Faculties",
+
+      "facultyModal": {
+        "btnCreate": "Create Faculty",
+        "btnUpdate": "Update",
+        "btnDelete": "Delete",
+        "btnCancel": "Cancel",
+
+        "modalCreate": {
+          "modalTitle": "Create Faculty",
+          "btnCreate": "Create"
+        },
+        "modalUpdate": {
+          "modalTitle": "Update Faculty",
+          "btnUpdate": "Save"
+        },
+        "modalDelete": {
+          "modalTitle": "Are you sure you want to delete the faculty?",
+          "btnDelete": "Delete"
+        }
+      }
+    },
+    "post": {
+      "tabTitle": "Post"
+    },
+    "pageNotFound": {
+      "tabTitle": "Page Not Found",
+      "pageTitle": "OOPS! Page Not Found!",
+      "btnLabel": "Back Home"
+    },
+    "postNotFound": {
+      "tabTitle": "Post Not Found"
+    }
+  },
+  "ui": {
+    "pagination": {
+      "pageIndex": "Page",
+      "totalPageLabel": "of",
+      "btnPrev": "Previous",
+      "btnNext": "Next",
+      "lastPage": "Last Page"
+    }
+  },
+  "modal": {
+    "btnCreate": "Create Post",
+    "btnUpdate": "Update",
+    "btnDelete": "Delete",
+    "btnCancel": "Cancel",
+    "modalCreate": {
+      "modalTitle": "Create New Post",
+      "btnCreate": "Create"
+    },
+    "modalUpdate": {
+      "modalTitle": "Update Post",
+      "btnUpdate": "Save"
+    },
+    "modalDelete": {
+      "modalTitle": "Are you sure you want to delete the post?",
+      "btnDelete": "Delete"
+    },
+    "modalForm": {
+      "formTitle": "Title",
+      "formBody": "Post"
+    }
+  },
+  "navigation": {
+    "pages": {
+      "title": "Pages",
+      "home": "Home",
+      "faculty": "Faculty",
+      "posts": "Posts"
+    }
+  }
+}

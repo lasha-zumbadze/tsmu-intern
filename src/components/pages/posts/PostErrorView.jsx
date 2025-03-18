@@ -1,12 +1,15 @@
 import { Link } from "react-router";
 import error_itemNotFound from "../../../assets/item-error.svg";
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 
 function PostErrorView({ error, additionLabel, redirectUrl, redirectLabel }) {
+  const { t } = useTranslation();
+
   return (
     <>
       <Helmet>
-        <title>404 | Post Not Found</title>
+        <title>404 | {t("view.postNotFound.tabTitle")}</title>
       </Helmet>
       <div className="flex h-full bg-[#edf2f9] justify-center overflow-hidden">
         <div className="flex flex-col items-center mt-10">

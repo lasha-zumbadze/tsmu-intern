@@ -1,7 +1,9 @@
+import { useTranslation } from "react-i18next";
 import { usePostContext } from "../../context/PostContext";
 
 function Pagination() {
   const { page, totalPage, setPage } = usePostContext();
+  const { t } = useTranslation();
 
   return (
     <div className="flex items-center justify-between py-8">
@@ -16,11 +18,15 @@ function Pagination() {
         }}
         disabled={page <= 1}
       >
-        Previous
+        {t("ui.pagination.btnPrev")}
       </button>
 
       <div className="text-gray-500 text-lg text-center hidden md:block">
-        {page >= totalPage ? "Last Page" : `Page ${page} of ${totalPage}`}
+        {page >= totalPage
+          ? `${t("ui.pagination.lastPage")}`
+          : `${t("ui.pagination.pageIndex")} ${page} ${t(
+              "ui.pagination.totalPageLabel"
+            )} ${totalPage}`}
       </div>
 
       <button
@@ -34,7 +40,7 @@ function Pagination() {
         }}
         disabled={page >= totalPage}
       >
-        next
+        {t("ui.pagination.btnNext")}
       </button>
     </div>
   );

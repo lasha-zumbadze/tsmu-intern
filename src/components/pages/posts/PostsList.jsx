@@ -5,9 +5,11 @@ import Modal from "../../modal/Modal";
 import Pagination from "../../ui/Pagination";
 import Loader from "../../ui/Loader";
 import { usePostContext } from "../../../context/PostContext";
+import { useTranslation } from "react-i18next";
 
 function PostsList() {
   const { loadingPosts, dataPerPage, error } = usePostContext();
+  const { t } = useTranslation();
 
   if (loadingPosts) return <Loader />;
   if (error)
@@ -17,7 +19,9 @@ function PostsList() {
   return (
     <div>
       <div className="border border-gray-200 p-5 bg-white rounded-md shadow-lg mb-2 flex">
-        <h2 className="text-3xl font-semibold text-gray-700">All Posts</h2>
+        <h2 className="text-3xl font-semibold text-gray-700">
+          {t("view.posts.pageTitle")}
+        </h2>
         <div className="ml-auto">
           <Modal modalType="add" />
         </div>

@@ -1,11 +1,14 @@
 import { Helmet } from "react-helmet-async";
 import FacultyList from "../components/pages/faculty/FacultyList";
+import { useTranslation } from "react-i18next";
 
 function Faculty() {
+  const { t } = useTranslation();
+
   return (
     <>
       <Helmet>
-        <title>Faculty Page</title>
+        <title>{t("view.faculty.tabTitle")}</title>
       </Helmet>
       <FacultyList />
     </>
