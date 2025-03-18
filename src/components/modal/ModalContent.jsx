@@ -13,6 +13,8 @@ function ModalContent({ submitBtnStyle }) {
   const { t } = useTranslation();
 
   const {
+    btnDisable,
+    setBtnDisable,
     setIsOpenAdd,
     setIsOpenEdit,
     setIsOpenDelete,
@@ -53,6 +55,11 @@ function ModalContent({ submitBtnStyle }) {
             form="modalForm"
             onClick={(e) => {
               e.preventDefault();
+              if (actionType !== "delete" && title && post) {
+                setBtnDisable(true);
+              } else if (actionType === "delete") {
+                setBtnDisable(true);
+              }
 
               queryAction(
                 actionType,
@@ -64,7 +71,8 @@ function ModalContent({ submitBtnStyle }) {
                 addPost,
                 editPost,
                 setTitle,
-                setPost
+                setPost,
+                t
               );
             }}
             className={`${submitBtnStyle} ${
@@ -72,7 +80,8 @@ function ModalContent({ submitBtnStyle }) {
               (!title || !post)
                 ? "cursor-not-allowed"
                 : "hover:bg-blue-600 cursor-pointer"
-            }`}
+            } `}
+            disabled={btnDisable}
             // type="submit"
           >
             {btnLabel}

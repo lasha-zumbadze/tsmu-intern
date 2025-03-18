@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 
-function useEditPost(setIsOpenEdit) {
+function useEditPost(setIsOpenEdit, t, setBtnDisable) {
   const queryClient = useQueryClient();
 
   const { mutate: editPost, isPending: editingPost } = useMutation({
@@ -24,9 +24,9 @@ function useEditPost(setIsOpenEdit) {
           await res.json();
         },
         {
-          loading: "Updating post...",
-          success: "Post updated successfully!",
-          error: "Failed to update post.",
+          loading: `${t("toast.editPost.loading")}`,
+          success: `${t("toast.editPost.success")}`,
+          error: `${t("toast.editPost.error")}`,
         }
       );
     },
@@ -35,6 +35,7 @@ function useEditPost(setIsOpenEdit) {
         queryKey: ["posts", "post"],
       });
 
+      setBtnDisable(false);
       setIsOpenEdit(false);
     },
   });

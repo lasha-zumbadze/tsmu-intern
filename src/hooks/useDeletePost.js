@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router";
 
-function useDeletePost(setIsOpenDelete) {
+function useDeletePost(setIsOpenDelete, t, setBtnDisable) {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
@@ -17,9 +17,9 @@ function useDeletePost(setIsOpenDelete) {
             method: "DELETE",
           }),
         {
-          loading: "Deleting post...",
-          success: "Post deleted successfully!",
-          error: "Failed to delete post.",
+          loading: `${t("toast.deletePost.loading")}`,
+          success: `${t("toast.deletePost.success")}`,
+          error: `${t("toast.deletePost.error")}`,
         }
       );
     },
@@ -28,6 +28,7 @@ function useDeletePost(setIsOpenDelete) {
         queryKey: ["posts"],
       });
 
+      setBtnDisable(false);
       setIsOpenDelete(false);
 
       navigate("/posts", { replace: true });

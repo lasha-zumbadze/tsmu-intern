@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 
-function useCreatePost(setIsOpenAdd) {
+function useCreatePost(setIsOpenAdd, t, setBtnDisable) {
   const queryClient = useQueryClient();
 
   const { mutate: addPost, isPending: addingPost } = useMutation({
@@ -27,9 +27,9 @@ function useCreatePost(setIsOpenAdd) {
           await res.json();
         },
         {
-          loading: "Adding new post...",
-          success: "Post added successfully!",
-          error: "Failed to add post.",
+          loading: `${t("toast.createPost.loading")}`,
+          success: `${t("toast.createPost.success")}`,
+          error: `${t("toast.createPost.error")}`,
         }
       );
     },
@@ -38,6 +38,7 @@ function useCreatePost(setIsOpenAdd) {
         queryKey: ["posts"],
       });
 
+      setBtnDisable(false);
       setIsOpenAdd(false);
     },
   });

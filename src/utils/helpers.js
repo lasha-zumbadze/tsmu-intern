@@ -24,13 +24,14 @@ export const queryAction = (
   addPost,
   editPost,
   setTitle,
-  setPost
+  setPost,
+  t
 ) => {
   if (actionType === "delete") {
     deletePost(postId);
   } else if (actionType === "add") {
     if (!title || !post) {
-      toast.error("Please fill in all fields");
+      toast.error(t("toast.emptyFieldsError"));
     } else {
       addPost({ title, post });
       setTitle("");
@@ -38,11 +39,11 @@ export const queryAction = (
     }
   } else if (actionType === "edit") {
     if (!title || !post) {
-      toast.error("Please fill in all fields");
+      toast.error(t("toast.emptyFieldsError"));
     } else {
       editPost({ postId, title, post });
-      setTitle("");
-      setPost("");
+      // setTitle("");
+      // setPost("");
     }
   }
 };

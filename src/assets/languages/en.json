@@ -85,5 +85,23 @@
       "faculty": "Faculty",
       "posts": "Posts"
     }
+  },
+  "toast": {
+    "emptyFieldsError": "Please fill in all fields",
+    "createPost": {
+      "loading": "Adding new post...",
+      "success": "Post added successfully!",
+      "error": "Failed to add post."
+    },
+    "editPost": {
+      "loading": "Updating post...",
+      "success": "Post updated successfully!",
+      "error": "Failed to update post"
+    },
+    "deletePost": {
+      "loading": "Deleting post...",
+      "success": "Post deleted successfully!",
+      "error": "Failed to delete post."
+    }
   }
 }
