@@ -23,7 +23,7 @@ function PostDetail() {
     );
 
   return (
-    <div className="bg-gray-50 h-full overflow-auto">
+    <div className="bg-gray-50 ">
       <img
         className="h-50 md:h-70 m-auto max-w-full p-3 md:p-0"
         src={blogBg}

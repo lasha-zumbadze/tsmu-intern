@@ -14,8 +14,8 @@ function Header() {
       </div>
       <div className="flex justify-between items-center lg:px-10 ml-auto lg:ml-0">
         <SearchBar />
-        <div className="flex text-2xl text-gray-500 gap-4">
-          <span className="cursor-pointer hover:translate-y-0.5 transition-all">
+        <div className="flex items-center text-2xl text-gray-500 gap-4">
+          <span className="cursor-pointer hover:-translate-y-0.5 transition-all">
             <FaSun />
           </span>
           <button
