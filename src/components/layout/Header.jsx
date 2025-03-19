@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Logo from "../ui/Logo";
 import SearchBar from "../ui/SearchBar";
-import { FaSun } from "react-icons/fa";
 import i18next from "i18next";
+import ThemeToggleButton from "../../components/ui/ThemeToggleBtn";
 
 function Header() {
   const [lng, setLng] = useState(
@@ -17,9 +17,7 @@ function Header() {
       <div className="flex justify-between items-center lg:px-10 ml-auto lg:ml-0">
         <SearchBar />
         <div className="flex items-center text-2xl text-gray-500 gap-4">
-          <span className="cursor-pointer hover:-translate-y-0.5 transition-all">
-            <FaSun />
-          </span>
+          <ThemeToggleButton />
           <button
             className="bg-gray-500 text-white text-lg w-7 h-7 rounded-md cursor-pointer hover:-translate-y-0.5 transition-all"
             onClick={() => {
