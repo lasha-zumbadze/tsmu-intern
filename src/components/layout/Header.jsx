@@ -5,7 +5,9 @@ import { FaSun } from "react-icons/fa";
 import i18next from "i18next";
 
 function Header() {
-  const [lng, setLng] = useState("EN");
+  const [lng, setLng] = useState(
+    localStorage.getItem("i18nextLng").toUpperCase() || "EN"
+  );
 
   return (
     <header className="col-start-1 col-end-3 grid grid-cols-2 lg:grid-cols-[18vw_1fr] h-[10vh] items-center border-b border-gray-200">
@@ -21,9 +23,10 @@ function Header() {
           <button
             className="bg-gray-500 text-white text-lg w-7 h-7 rounded-md cursor-pointer hover:-translate-y-0.5 transition-all"
             onClick={() => {
-              i18next.changeLanguage(i18next.language === "en" ? "ge" : "en");
-
-              setLng(i18next.language.toUpperCase());
+              const newLang = i18next.language === "en" ? "ge" : "en";
+              i18next.changeLanguage(newLang);
+              localStorage.setItem("i18nextLng", newLang);
+              setLng(newLang.toUpperCase());
             }}
           >
             {lng}
