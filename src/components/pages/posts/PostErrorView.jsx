@@ -11,13 +11,13 @@ function PostErrorView({ error, additionLabel, redirectUrl, redirectLabel }) {
       <Helmet>
         <title>404 | {t("view.postNotFound.tabTitle")}</title>
       </Helmet>
-      <div className="flex h-full bg-[#edf2f9] justify-center overflow-hidden">
+      <div className="flex h-full bg-[#edf2f9] justify-center overflow-hidden dark:bg-gray-700">
         <div className="flex flex-col items-center mt-10">
           <img className="w-[20rem]" src={error_itemNotFound} alt="error svg" />
           <div className="flex flex-col items-center gap-8">
-            <div className="flex flex-col  items-center gap-2">
-              <h2 className="text-3xl text-[#3E3E3E]">OOPS! {error}</h2>
-              <p className="text-lg text-[#3E3E3E]">{additionLabel}</p>
+            <div className="flex flex-col  items-center gap-2 text-[#3E3E3E] dark:text-gray-50">
+              <h2 className="text-3xl">OOPS! {error}</h2>
+              <p className="text-lg">{additionLabel}</p>
             </div>
             <button>
               <Link
