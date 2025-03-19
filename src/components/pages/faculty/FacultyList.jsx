@@ -19,8 +19,8 @@ function FacultyList() {
           setAddOpen={setAddOpen}
         />
       )}
-      <div className="border border-gray-200 p-5 bg-white rounded-md shadow-lg mb-2 flex justify-between">
-        <h2 className="text-3xl font-semibold text-gray-700">
+      <div className="border border-gray-200 p-5 bg-white rounded-md shadow-lg mb-2 flex justify-between dark:bg-gray-700 dark:border-gray-600">
+        <h2 className="text-3xl font-semibold text-gray-700 dark:text-gray-50">
           {t("view.faculty.pageTitle")}
         </h2>
         <button

@@ -14,7 +14,7 @@ const ThemeToggleButton = () => {
       onClick={toggleTheme}
       className="cursor-pointer hover:-translate-y-0.5 transition-all"
     >
-      {theme === "dark" ? <FaSun /> : <FaMoon />}
+      {theme === "dark" ? <FaSun className="text-white" /> : <FaMoon />}
     </button>
   );
 };

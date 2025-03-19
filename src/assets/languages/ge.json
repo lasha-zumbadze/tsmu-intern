@@ -57,7 +57,7 @@
     }
   },
   "modal": {
-    "btnCreate": "პოსტის დამატება",
+    "btnCreate": "დამატება",
     "btnUpdate": "განახლება",
     "btnDelete": "წაშლა",
     "btnCancel": "გაუქმება",

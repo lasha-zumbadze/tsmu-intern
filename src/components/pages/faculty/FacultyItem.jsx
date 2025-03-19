@@ -29,17 +29,17 @@ function FacultyItem({ faculty, index, dispatch }) {
         />
       ) : null}
 
-      <div className="bg-gradient-to-br from-blue-100 to-white shadow-md border border-gray-200 p-4 text-xl rounded-md h-50 transition-all hover:shadow-xl hover:-translate-y-0.5 flex flex-col justify-between">
-        <p className="text-gray-700">{faculty}</p>
+      <div className="bg-white shadow-md border border-gray-200 p-4 text-xl rounded-md h-50 transition-all hover:shadow-xl hover:-translate-y-0.5 flex flex-col justify-between dark:bg-gray-700 dark:border-gray-600">
+        <h2 className="text-gray-700 dark:text-gray-50">{faculty}</h2>
         <div className="flex justify-between">
           <button
-            className="text-gray-500 cursor-pointer border-b hover:text-gray-700 transition-all"
+            className="text-gray-500 cursor-pointer border-b hover:text-gray-700 transition-all dark:text-gray-50 dark:hover:text-gray-300"
             onClick={() => setDeleteOpen(true)}
           >
             {t("view.faculty.facultyModal.btnDelete")}
           </button>
           <button
-            className="text-gray-500 cursor-pointer border-b hover:text-gray-700 transition-all"
+            className="text-gray-500 cursor-pointer border-b hover:text-gray-700 transition-all dark:text-gray-50 dark:hover:text-gray-300"
             onClick={() => setEditOpen(true)}
           >
             {t("view.faculty.facultyModal.btnUpdate")}

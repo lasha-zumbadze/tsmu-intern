@@ -21,7 +21,7 @@ function Pagination() {
         {t("ui.pagination.btnPrev")}
       </button>
 
-      <div className="text-gray-500 text-lg text-center hidden md:block">
+      <div className="text-gray-500 text-lg text-center hidden md:block dark:text-gray-200">
         {page >= totalPage
           ? `${t("ui.pagination.lastPage")}`
           : `${t("ui.pagination.pageIndex")} ${page} ${t(

@@ -18,8 +18,8 @@ function PostsList() {
     );
   return (
     <div>
-      <div className="border border-gray-200 p-5 bg-white rounded-md shadow-lg mb-2 flex">
-        <h2 className="text-3xl font-semibold text-gray-700">
+      <div className="border border-gray-200 p-5 bg-white rounded-md shadow-lg mb-2 flex dark:bg-gray-700 dark:border-gray-600">
+        <h2 className="text-3xl font-semibold text-gray-700 dark:text-gray-50">
           {t("view.posts.pageTitle")}
         </h2>
         <div className="ml-auto">

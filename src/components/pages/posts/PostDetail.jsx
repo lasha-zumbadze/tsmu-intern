@@ -23,13 +23,13 @@ function PostDetail() {
     );
 
   return (
-    <div className="bg-gray-50 ">
+    <div className="bg-gray-50 dark:bg-gray-700">
       <img
         className="h-50 md:h-70 m-auto max-w-full p-3 md:p-0"
         src={blogBg}
         alt="blog post bg"
       />
-      <div className="px-6 pt-6 flex flex-col gap-5 md:gap-10 bg-gradient-to-b from-white to-gray-50">
+      <div className="px-6 pt-6 flex flex-col gap-5 md:gap-10 bg-gray-50 dark:bg-gray-700 dark:text-gray-50">
         <h2 className="text-2xl md:text-4xl font-semibold">{post.title}</h2>
         <p className="text-justify">{post.body}</p>
         <div className="md:px-5">

@@ -9,7 +9,7 @@ function Home() {
       <Helmet>
         <title>{t("view.home.tabTitle")}</title>
       </Helmet>
-      <div className="h-[85vh] text-5xl bg-gray-50 p-5">
+      <div className="h-[85vh] text-5xl bg-gray-50 p-5 dark:bg-gray-700 dark:text-gray-50">
         {t("view.home.pageTitle")}
       </div>
     </>

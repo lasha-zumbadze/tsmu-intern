@@ -10,7 +10,7 @@ function PageNavbar() {
   return (
     <div>
       <div className="flex items-center gap-6">
-        <h5 className="text-[#9faec5] text-md">
+        <h5 className="text-[#9faec5] text-md dark:text-gray-300">
           {t("navigation.pages.title")}
         </h5>
         <div className="h-[0.5px] w-full bg-gray-300"></div>
