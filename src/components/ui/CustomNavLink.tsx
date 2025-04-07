@@ -1,7 +1,8 @@
 import { NavLink } from "react-router";
 import { useAsideContext } from "../../context/AsideContext";
+import { CustomNavLinkProps } from "../../types/customNavLinkType";
 
-function CustomNavLink({ children, route, textSize }) {
+function CustomNavLink({ children, route, textSize }: CustomNavLinkProps) {
   const { setIsOpenAside } = useAsideContext();
 
   return (

@@ -2,11 +2,11 @@ import { useState } from "react";
 import Logo from "../ui/Logo";
 import SearchBar from "../ui/SearchBar";
 import i18next from "i18next";
-import ThemeToggleButton from "../../components/ui/ThemeToggleBtn";
+import ThemeToggleButton from "../ui/ThemeToggleBtn";
 
 function Header() {
-  const [lng, setLng] = useState(
-    localStorage.getItem("i18nextLng").toUpperCase() || "EN"
+  const [lng, setLng] = useState(() =>
+    (localStorage.getItem("i18nextLng") || "en").toUpperCase()
   );
 
   return (

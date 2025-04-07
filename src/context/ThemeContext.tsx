@@ -1,8 +1,12 @@
 import { createContext, useState, useEffect, useContext } from "react";
+import {
+  ThemeContextProviderProps,
+  ThemeContextType,
+} from "../types/themeContextType";
 
-const ThemeContext = createContext();
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export function ThemeContextProvider({ children }) {
+export function ThemeContextProvider({ children }: ThemeContextProviderProps) {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   useEffect(() => {
@@ -22,5 +26,11 @@ export function ThemeContextProvider({ children }) {
 }
 
 export function useThemeContext() {
-  return useContext(ThemeContext);
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error(
+      "useThemeContext must be used within a ThemeContextProvider"
+    );
+  }
+  return context;
 }
