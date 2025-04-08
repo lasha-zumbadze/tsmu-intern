@@ -1,11 +1,15 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { t } from "i18next";
 import toast from "react-hot-toast";
 
-function useCreatePost(setIsOpenAdd, t, setBtnDisable) {
+function useCreatePost(
+  setIsOpenAdd: React.Dispatch<React.SetStateAction<boolean>>,
+  setBtnDisable: React.Dispatch<React.SetStateAction<boolean>>
+) {
   const queryClient = useQueryClient();
 
   const { mutate: addPost, isPending: addingPost } = useMutation({
-    mutationFn: async (newPost) => {
+    mutationFn: async (newPost: { title: string; post: string }) => {
       const { title, post: body } = newPost;
 
       // Here I check if the data is pass to the mutation function after form submit

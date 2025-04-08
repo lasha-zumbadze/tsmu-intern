@@ -2,13 +2,14 @@ import { createContext, useContext, useState } from "react";
 import useCreatePost from "../hooks/useCreatePost";
 import useDeletePost from "../hooks/useDeletePost";
 import useEditPost from "../hooks/useEditPost";
-import { useTranslation } from "react-i18next";
+import {
+  ModalContextProviderProps,
+  ModalContextType,
+} from "../types/modalContextType";
 
-const ModalContext = createContext();
+const ModalContext = createContext<ModalContextType | undefined>(undefined);
 
-export function ModalContextProvider({ children }) {
-  const { t } = useTranslation();
-
+export function ModalContextProvider({ children }: ModalContextProviderProps) {
   // Modal open states
   const [isOpenAdd, setIsOpenAdd] = useState(false);
   const [isOpenEdit, setIsOpenEdit] = useState(false);
@@ -25,9 +26,9 @@ export function ModalContextProvider({ children }) {
   const [actionType, setActionType] = useState("");
 
   // Hooks for actions
-  const { addPost, addingPost } = useCreatePost(setIsOpenAdd, t, setBtnDisable);
-  const { editPost } = useEditPost(setIsOpenEdit, t, setBtnDisable);
-  const { deletePost } = useDeletePost(setIsOpenDelete, t, setBtnDisable);
+  const { addPost, addingPost } = useCreatePost(setIsOpenAdd, setBtnDisable);
+  const { editPost } = useEditPost(setIsOpenEdit, setBtnDisable);
+  const { deletePost } = useDeletePost(setIsOpenDelete, setBtnDisable);
 
   return (
     <ModalContext.Provider

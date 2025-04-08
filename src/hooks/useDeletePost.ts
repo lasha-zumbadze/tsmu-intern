@@ -1,8 +1,12 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { t } from "i18next";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router";
 
-function useDeletePost(setIsOpenDelete, t, setBtnDisable) {
+function useDeletePost(
+  setIsOpenDelete: React.Dispatch<React.SetStateAction<boolean>>,
+  setBtnDisable: React.Dispatch<React.SetStateAction<boolean>>
+) {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 

@@ -1,11 +1,22 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { t } from "i18next";
 import toast from "react-hot-toast";
 
-function useEditPost(setIsOpenEdit, t, setBtnDisable) {
+function useEditPost(
+  setIsOpenEdit: React.Dispatch<React.SetStateAction<boolean>>,
+  setBtnDisable: React.Dispatch<React.SetStateAction<boolean>>
+) {
   const queryClient = useQueryClient();
 
   const { mutate: editPost, isPending: editingPost } = useMutation({
-    mutationFn: async ({ postId, ...newData }) => {
+    mutationFn: async ({
+      postId,
+      ...newData
+    }: {
+      postId: number;
+      title: string;
+      body: string;
+    }) => {
       // Here I check if the item index and data is pass to the mutation function after form submit
       console.log(postId, newData);
 
