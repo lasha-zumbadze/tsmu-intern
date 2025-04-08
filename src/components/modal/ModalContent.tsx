@@ -1,6 +1,5 @@
 import { useParams } from "react-router";
 import { useModalContext } from "../../context/ModalContext";
-import toast from "react-hot-toast";
 import { queryAction } from "../../utils/helpers";
 import ModalForm from "./ModalForm";
 import { useTranslation } from "react-i18next";
