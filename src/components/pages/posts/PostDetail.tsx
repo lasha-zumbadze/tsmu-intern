@@ -8,7 +8,7 @@ import blogBg from "../../../assets/blog-bg.webp";
 
 function PostDetail() {
   const { id: postId } = useParams();
-  const { loadingPost, post, error } = usePost(postId);
+  const { loadingPost, post, error } = usePost(postId!);
 
   if (loadingPost) return <Loader />;
 

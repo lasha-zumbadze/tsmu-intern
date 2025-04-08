@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-function usePost(postId) {
+function usePost(postId: string) {
   const {
     isPending: loadingPost,
     data: post,
