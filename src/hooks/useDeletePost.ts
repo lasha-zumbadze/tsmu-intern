@@ -11,11 +11,11 @@ function useDeletePost(
   const queryClient = useQueryClient();
 
   const { mutate: deletePost, isPending: deletingPost } = useMutation({
-    mutationFn: async (postId) => {
+    mutationFn: async (postId: string) => {
       // Here I check if the item index is passed to the mutation function after form submit
       console.log(postId);
 
-      return toast.promise(
+      toast.promise(
         async () =>
           await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
             method: "DELETE",

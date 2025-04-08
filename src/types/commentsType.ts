@@ -1,5 +1,5 @@
 export type CommentType = {
-  postId: number;
+  postId: string;
   id: number;
   name: string;
   email: string;

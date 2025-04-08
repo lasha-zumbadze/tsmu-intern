@@ -5,7 +5,7 @@ export type PostItemProps = {
 
 export type PostErrorViewProps = {
   error: string;
-  additionLabel: string;
+  additionLabel?: string;
   redirectUrl: string;
   redirectLabel: string;
 };

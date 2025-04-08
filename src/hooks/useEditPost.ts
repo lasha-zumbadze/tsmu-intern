@@ -13,7 +13,7 @@ function useEditPost(
       postId,
       ...newData
     }: {
-      postId: number;
+      postId: string;
       title: string;
       body: string;
     }) => {

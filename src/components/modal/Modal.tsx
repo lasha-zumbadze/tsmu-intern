@@ -9,7 +9,7 @@ const MAIN_BTN =
 const SECONDARY_BTN =
   "border border-gray-300 w-20 md:w-28 py-1.5 text-blue-500 bg-white rounded-md text-lg cursor-pointer transition-all hover:-translate-y-0.5 hover:shadow-md";
 
-function Modal({ modalType }: { modalType: string }) {
+function Modal({ modalType }: { modalType?: string }) {
   const { t } = useTranslation();
 
   const {

@@ -23,7 +23,8 @@ export const queryAction = (
   title: string,
   post: string,
   postId: string,
-  deletePost: UseMutateFunction<Response, Error, string, unknown>,
+  deletePost: UseMutateFunction<void, Error, string, unknown>,
+
   addPost: UseMutateFunction<
     void,
     Error,
@@ -33,7 +34,7 @@ export const queryAction = (
   editPost: UseMutateFunction<
     void,
     Error,
-    { postId: string; title: string; post: string },
+    { postId: string; title: string; body: string },
     unknown
   >,
   setTitle: React.Dispatch<React.SetStateAction<string>>,
@@ -53,7 +54,7 @@ export const queryAction = (
     if (!title || !post) {
       toast.error(t("toast.emptyFieldsError"));
     } else {
-      editPost({ postId, title, post });
+      editPost({ postId, title, body: post });
       // setTitle("");
       // setPost("");
     }
