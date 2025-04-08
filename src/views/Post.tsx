@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 function Post() {
   const { id: postId } = useParams();
-  const { post } = usePost(postId);
+  const { post } = usePost(postId!);
   const postTitle = post?.title.split(" ").slice(0, 3).join(" ");
   const { t } = useTranslation();
 

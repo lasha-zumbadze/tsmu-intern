@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 const CANCEL_BTN =
   "rounded-md border border-gray-500 text-gray-600 text-lg w-28 md:w-36 hover:text-white hover:bg-red-400 cursor-pointer transition-all";
 
-function ModalContent({ submitBtnStyle }) {
+function ModalContent({ submitBtnStyle }: { submitBtnStyle: string }) {
   const { id: postId } = useParams();
   const { t } = useTranslation();
 
@@ -63,16 +63,14 @@ function ModalContent({ submitBtnStyle }) {
 
               queryAction(
                 actionType,
-                toast,
                 title,
                 post,
-                postId,
+                postId!,
                 deletePost,
                 addPost,
                 editPost,
                 setTitle,
-                setPost,
-                t
+                setPost
               );
             }}
             className={`${submitBtnStyle} ${

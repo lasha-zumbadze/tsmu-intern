@@ -19,11 +19,11 @@ export type ModalContextType = {
   setActionType: React.Dispatch<React.SetStateAction<string>>;
   setPost: React.Dispatch<React.SetStateAction<string>>;
   post: string;
-  deletePost: UseMutateFunction<Response, Error, void, unknown>;
+  deletePost: UseMutateFunction<Response, Error, string, unknown>;
   editPost: UseMutateFunction<
     void,
     Error,
-    { postId: number; title: string; body: string },
+    { postId: string; title: string; post: string },
     unknown
   >;
   addPost: UseMutateFunction<

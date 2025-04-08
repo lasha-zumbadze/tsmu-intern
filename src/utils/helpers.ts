@@ -1,3 +1,7 @@
+import { UseMutateFunction } from "@tanstack/react-query";
+import { t } from "i18next";
+import toast from "react-hot-toast";
+
 // Custom Random date for post items
 export const getRandomDate = () => {
   const startDate = new Date(2000, 0, 1);
@@ -15,17 +19,25 @@ export const getRandomDate = () => {
 
 // Global query action function
 export const queryAction = (
-  actionType,
-  toast,
-  title,
-  post,
-  postId,
-  deletePost,
-  addPost,
-  editPost,
-  setTitle,
-  setPost,
-  t
+  actionType: string,
+  title: string,
+  post: string,
+  postId: string,
+  deletePost: UseMutateFunction<Response, Error, string, unknown>,
+  addPost: UseMutateFunction<
+    void,
+    Error,
+    { title: string; post: string },
+    unknown
+  >,
+  editPost: UseMutateFunction<
+    void,
+    Error,
+    { postId: string; title: string; post: string },
+    unknown
+  >,
+  setTitle: React.Dispatch<React.SetStateAction<string>>,
+  setPost: React.Dispatch<React.SetStateAction<string>>
 ) => {
   if (actionType === "delete") {
     deletePost(postId);
