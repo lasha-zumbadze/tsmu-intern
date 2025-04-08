@@ -1,9 +1,13 @@
 import { createContext, useContext, useState } from "react";
 import usePosts from "../hooks/usePosts";
+import {
+  PostContextProviderProps,
+  PostContextType,
+} from "../types/postContextType";
 
-const PostContext = createContext();
+const PostContext = createContext<PostContextType | undefined>(undefined);
 
-export function PostContextProvider({ children }) {
+export function PostContextProvider({ children }: PostContextProviderProps) {
   const { loadingPosts, posts, error } = usePosts();
   const [page, setPage] = useState(1);
 
@@ -22,5 +26,9 @@ export function PostContextProvider({ children }) {
 }
 
 export function usePostContext() {
-  return useContext(PostContext);
+  const context = useContext(PostContext);
+  if (context === undefined) {
+    throw new Error("usePostContext must be used within a PostContextProvider");
+  }
+  return context;
 }

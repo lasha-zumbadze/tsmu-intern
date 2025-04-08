@@ -2,8 +2,14 @@ import { Link } from "react-router";
 import error_itemNotFound from "../../../assets/item-error.svg";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
+import { PostErrorViewProps } from "../../../types/postTypes";
 
-function PostErrorView({ error, additionLabel, redirectUrl, redirectLabel }) {
+function PostErrorView({
+  error,
+  additionLabel,
+  redirectUrl,
+  redirectLabel,
+}: PostErrorViewProps) {
   const { t } = useTranslation();
 
   return (

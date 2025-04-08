@@ -28,7 +28,7 @@ function PostsList() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {dataPerPage.map((post, i) => (
+        {dataPerPage?.map((post, i) => (
           <div key={i}>
             <Link to={`${post.id}`}>
               <PostItem title={post.title} body={post.body} />

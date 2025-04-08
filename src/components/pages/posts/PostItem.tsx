@@ -3,8 +3,9 @@ import Card from "react-bootstrap/Card";
 import { getRandomDate } from "../../../utils/helpers";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { PostItemProps } from "../../../types/postTypes";
 
-function PostItem({ title, body }) {
+function PostItem({ title, body }: PostItemProps) {
   const [hovered, setHovered] = useState(false);
   const randomDate = useMemo(() => getRandomDate(), []);
   const { t } = useTranslation();

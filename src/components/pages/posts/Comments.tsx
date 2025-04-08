@@ -1,9 +1,10 @@
 import { useParams } from "react-router";
 import useComments from "../../../hooks/useComments";
+import { CommentType } from "../../../types/commentsType";
 
 function Comments() {
   const { id: postId } = useParams();
-  const { loadingComments, comments, error } = useComments(postId);
+  const { loadingComments, comments, error } = useComments(postId!);
 
   if (loadingComments) return <div>loading...</div>;
   if (error) return <div>error...</div>;
@@ -12,7 +13,7 @@ function Comments() {
       <div className="border-b border-gray-200 py-2 text-sm text-gray-500 dark:text-gray-300">
         {comments.length} Comments
       </div>
-      {comments.map((comment, i) => (
+      {comments.map((comment: CommentType, i: number) => (
         <div key={i} className="bg-gray-50 rounded-md p-2 dark:bg-gray-600">
           <span className="text-blue-500 dark:text-blue-300">
             {comment.email}

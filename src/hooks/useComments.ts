@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-function useComments(postId) {
+function useComments(postId: string) {
   const {
     isPending: loadingComments,
     data: comments,
