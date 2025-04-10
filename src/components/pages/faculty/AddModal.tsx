@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
+import { AddModalProps } from "../../../types/facultyTypes";
 
-function AddModal({ setAddOpen, addOpen, dispatch }) {
+function AddModal({ setAddOpen, addOpen, dispatch }: AddModalProps) {
   const [inputValue, setInputValue] = useState("");
   const { t } = useTranslation();
 
   const handleAdd = () => {
-    dispatch({ type: "addFaculty", payload: inputValue });
+    dispatch({ type: "addFaculty", payload: { value: inputValue } });
     setInputValue("");
     toast.success("Faculty created successfully.");
     setAddOpen(false);
   };
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: KeyboardEvent): void => {
       if (e.key === "Escape") {
         setAddOpen(false);
       }

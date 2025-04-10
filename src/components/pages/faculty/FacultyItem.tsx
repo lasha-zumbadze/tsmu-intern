@@ -2,8 +2,9 @@ import { useState } from "react";
 import EditModal from "./EditModal";
 import DeleteModal from "./DeleteModal";
 import { useTranslation } from "react-i18next";
+import { FacultyItemProps } from "../../../types/facultyTypes";
 
-function FacultyItem({ faculty, index, dispatch }) {
+function FacultyItem({ faculty, index, dispatch }: FacultyItemProps) {
   const [facultyName, setFacultyName] = useState(faculty);
   const [editOpen, setEditOpen] = useState(false);
   const [deleteOpen, setDeleteOpen] = useState(false);
