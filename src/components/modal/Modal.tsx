@@ -1,5 +1,4 @@
 import { useModalContext } from "../../context/ModalContext";
-import { useEffect } from "react";
 import ModalContent from "./ModalContent";
 import { useTranslation } from "react-i18next";
 
@@ -16,8 +15,6 @@ function Modal({ modalType }: { modalType?: string }) {
     setBtnLabel,
     setModalTitle,
     setActionType,
-    setTitle,
-    setPost,
     isOpenAdd,
     isOpenEdit,
     isOpenDelete,
@@ -25,35 +22,6 @@ function Modal({ modalType }: { modalType?: string }) {
     setIsOpenDelete,
     setIsOpenEdit,
   } = useModalContext();
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent): void => {
-      if (e.key === "Escape") {
-        setTitle("");
-        setPost("");
-        setIsOpenAdd(false);
-        setIsOpenEdit(false);
-        setIsOpenDelete(false);
-      }
-    };
-
-    if (isOpenAdd || isOpenEdit || isOpenDelete) {
-      window.addEventListener("keydown", handleKeyDown);
-    }
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [
-    isOpenAdd,
-    isOpenEdit,
-    isOpenDelete,
-    setIsOpenAdd,
-    setIsOpenEdit,
-    setIsOpenDelete,
-    setTitle,
-    setPost,
-  ]);
 
   return (
     <>

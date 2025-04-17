@@ -1,7 +1,7 @@
-import { useEffect } from "react";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import { EditModalProps } from "../../../types/facultyTypes";
+import useFacultyModalCloseEffect from "../../../hooks/useFacultyModalClose";
 
 function EditModal({
   facultyName,
@@ -22,21 +22,7 @@ function EditModal({
     setEditOpen(false);
   };
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent): void => {
-      if (e.key === "Escape") {
-        setEditOpen(false);
-      }
-    };
-
-    if (editOpen) {
-      window.addEventListener("keydown", handleKeyDown);
-    }
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [editOpen, setEditOpen]);
+  useFacultyModalCloseEffect(editOpen, setEditOpen);
 
   return (
     <div>

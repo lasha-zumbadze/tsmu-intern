@@ -1,7 +1,7 @@
-import { useEffect } from "react";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import { DeleteModalProps } from "../../../types/facultyTypes";
+import useFacultyModalCloseEffect from "../../../hooks/useFacultyModalClose";
 
 function DeleteModal({
   setDeleteOpen,
@@ -20,21 +20,7 @@ function DeleteModal({
     setDeleteOpen(false);
   };
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent): void => {
-      if (e.key === "Escape") {
-        setDeleteOpen(false);
-      }
-    };
-
-    if (deleteOpen) {
-      window.addEventListener("keydown", handleKeyDown);
-    }
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [deleteOpen, setDeleteOpen]);
+  useFacultyModalCloseEffect(deleteOpen, setDeleteOpen);
 
   return (
     <div>

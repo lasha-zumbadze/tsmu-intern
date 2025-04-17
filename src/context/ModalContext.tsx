@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import useCreatePost from "../hooks/useCreatePost";
 import useDeletePost from "../hooks/useDeletePost";
 import useEditPost from "../hooks/useEditPost";
@@ -29,6 +29,36 @@ export function ModalContextProvider({ children }: ModalContextProviderProps) {
   const { addPost, addingPost } = useCreatePost(setIsOpenAdd, setBtnDisable);
   const { editPost } = useEditPost(setIsOpenEdit, setBtnDisable);
   const { deletePost } = useDeletePost(setIsOpenDelete, setBtnDisable);
+
+  // Handle escape key to close modals
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent): void => {
+      if (e.key === "Escape") {
+        setTitle("");
+        setPost("");
+        setIsOpenAdd(false);
+        setIsOpenEdit(false);
+        setIsOpenDelete(false);
+      }
+    };
+
+    if (isOpenAdd || isOpenEdit || isOpenDelete) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [
+    isOpenAdd,
+    isOpenEdit,
+    isOpenDelete,
+    setIsOpenAdd,
+    setIsOpenEdit,
+    setIsOpenDelete,
+    setTitle,
+    setPost,
+  ]);
 
   return (
     <ModalContext.Provider

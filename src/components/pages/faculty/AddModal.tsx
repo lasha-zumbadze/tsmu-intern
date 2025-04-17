@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import { AddModalProps } from "../../../types/facultyTypes";
+import useFacultyModalCloseEffect from "../../../hooks/useFacultyModalClose";
 
 function AddModal({ setAddOpen, addOpen, dispatch }: AddModalProps) {
   const [inputValue, setInputValue] = useState("");
@@ -14,21 +15,7 @@ function AddModal({ setAddOpen, addOpen, dispatch }: AddModalProps) {
     setAddOpen(false);
   };
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent): void => {
-      if (e.key === "Escape") {
-        setAddOpen(false);
-      }
-    };
-
-    if (addOpen) {
-      window.addEventListener("keydown", handleKeyDown);
-    }
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [addOpen, setAddOpen]);
+  useFacultyModalCloseEffect(addOpen, setAddOpen);
 
   return (
     <div>
